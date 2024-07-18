@@ -12,7 +12,7 @@ def create_user_delete_user():
         'password': create_random_password(),
         'email': create_random_email()
     }
-    response = requests.post(Data.Url_create_user, data=new_user)
+    response = requests.post(Data.Url_create_and_registrate_user, data=new_user)
     response_body = response.json()
 
     yield new_user, response_body
@@ -26,6 +26,5 @@ def create_user_and_order_and_delete(create_user_delete_user):
     access_token = create_user_delete_user[1]['accessToken']
     headers = {'Authorization': access_token}
     ingredients = {'ingredients': [BurgerIngred.burg_1]}
-    response_body = requests.post(Data.Url_create_order, data=ingredients, headers=headers)
+    response_body = requests.post(Data.Url_create_and_get_order, data=ingredients, headers=headers)
     yield access_token, response_body
-    requests.delete(Data.Url_delete_user, headers={'Authorization': access_token})

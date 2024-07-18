@@ -13,7 +13,7 @@ class TestCreateUser: #++
         'password': create_random_password(),
         'email': create_random_email()
     }
-        response = requests.post(Data.Url_create_user, data=new_user)
+        response = requests.post(Data.Url_create_and_registrate_user, data=new_user)
         assert response.status_code == 200 and response.json()["success"] is True
 
     @allure.title('Проверка создания пользователя, который уже зарегестрировался')
@@ -24,8 +24,8 @@ class TestCreateUser: #++
             'password': create_random_password(),
             'email': create_random_email()
         }
-        requests.post(Data.Url_create_user, data=new_user)
-        response = requests.post(Data.Url_create_user, data=new_user)
+        requests.post(Data.Url_create_and_registrate_user, data=new_user)
+        response = requests.post(Data.Url_create_and_registrate_user, data=new_user)
         assert response.status_code == 403 and response.json() == {"success": False, "message": "User already exists"}
 
     @allure.title('Проверка создания пользователя и не заполнить одно из обязательных полей.')
@@ -36,7 +36,7 @@ class TestCreateUser: #++
         {'email': create_random_email(), 'password': create_random_password(), 'name': ''}
     ])
     def test_create_user_account_with_empty_field(self, empty_fiel):
-        response = requests.post(Data.Url_create_user, data=empty_fiel)
+        response = requests.post(Data.Url_create_and_registrate_user, data=empty_fiel)
         assert response.status_code == 403 and response.json() == {"success": False, "message": "Email, password and name are required fields"}
 
     @classmethod

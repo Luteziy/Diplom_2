@@ -1,14 +1,29 @@
 class Data:
     Url_main_page = 'https://stellarburgers.nomoreparties.site'
-    Url_create_user = 'https://stellarburgers.nomoreparties.site/api/auth/register'
-    Url_registration = 'https://stellarburgers.nomoreparties.site/api/auth/register'
-    Url_auth_login = 'https://stellarburgers.nomoreparties.site/api/auth/login'
-    Url_user_update_data = 'https://stellarburgers.nomoreparties.site/api/auth/user'
-    Url_create_order = 'https://stellarburgers.nomoreparties.site/api/orders'
-    Url_get_orders = 'https://stellarburgers.nomoreparties.site/api/orders'
-    Url_log_out = 'https://stellarburgers.nomoreparties.site/api/auth/logout'
-    Url_delete_user = 'https://stellarburgers.nomoreparties.site/api/auth/user'
+
+    Url_create_and_registrate_user = f'{Url_main_page}/api/auth/register'
+    Url_auth_login = f'{Url_main_page}/api/auth/login'
+    Url_user_update_data = f'{Url_main_page}/api/auth/user'
+    Url_create_and_get_order = f'{Url_main_page}/api/orders'
+    Url_log_out = f'{Url_main_page}/api/auth/logout'
+    Url_delete_user = f'{Url_main_page}/api/auth/user'
     headers = {'Content-Type': 'application/json'}
+
+    #Url_create_user = 'https://stellarburgers.nomoreparties.site/api/auth/register'
+    #Url_registration = 'https://stellarburgers.nomoreparties.site/api/auth/register'
+
+    #Url_auth_login = 'https://stellarburgers.nomoreparties.site/api/auth/login'
+
+    #Url_user_update_data = 'https://stellarburgers.nomoreparties.site/api/auth/user'
+
+    #Url_create_order = 'https://stellarburgers.nomoreparties.site/api/orders'
+    #Url_get_orders = 'https://stellarburgers.nomoreparties.site/api/orders'
+
+    #Url_log_out = 'https://stellarburgers.nomoreparties.site/api/auth/logout'
+
+    #Url_delete_user = 'https://stellarburgers.nomoreparties.site/api/auth/user'
+
+
 
 class DataUsers:
     email = 'akuz_6@gmail.com'

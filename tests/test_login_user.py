@@ -13,7 +13,7 @@ class TestLoginUser: #++
             'password': create_random_password(),
             'name': create_random_name()
         }
-        requests.post(Data.Url_create_user, data=payload)
+        requests.post(Data.Url_create_and_registrate_user, data=payload)
         response = requests.post(Data.Url_auth_login, data=payload)
         assert response.status_code == 200 and response.json()["success"] is True
 
